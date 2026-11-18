@@ -1,31 +1,51 @@
-//Exercise #2: At Least Five Function
-const studentScoresRoom1 = [90, 40, 67, 80, 100, 15, 86, 12, 99, 67];
+
+const studentScoresRoom1 = [12, 40, 67, 80, 100, 15, 40, 78, 75, 80];
+
 const studentScoresRoom2 = [78, 98, 23, 15, 40, 12, 40, 67, 80, 100];
+
 const studentScoresRoom3 = [67, 80, 100, 15, 12, 40, 67, 80, 100, 67];
 
+
+// 1. Create checkGradeOver70 function
 function checkGradeOver70(score) {
-  // Start coding here
+    return score > 70;
 }
 
+
+// 2. Create atLeastFive function
 function atLeastFive(array, operation) {
-  // Start coding here
+    let count = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (operation(array[i])) {
+            count++;
+        }
+    }
+
+    return count >= 5;
 }
 
-// Using `atLeastFive` function here
-let scoreRoom1Result;
-let scoreRoom2Result;
-let scoreRoom3Result;
 
-console.log(scoreRoom1Result); //true
-console.log(scoreRoom2Result); //false
-console.log(scoreRoom3Result); //false
+// 3. Execute atLeastFive function
+const scoreRoom1Result = atLeastFive(studentScoresRoom1, checkGradeOver70);
 
-/*
-====================================
+const scoreRoom2Result = atLeastFive(studentScoresRoom2, checkGradeOver70);
 
-1. ใน Exercise นี้ ฟังก์ชันใดเป็น Callback Function?
+const scoreRoom3Result = atLeastFive(studentScoresRoom3, checkGradeOver70);
 
-2. ใน Exercise นี้ ฟังก์ชันใดเป็น Higher Order Function?
 
-====================================
-*/
+// 4. Console.log results
+console.log(scoreRoom1Result); // true
+console.log(scoreRoom2Result); // false
+console.log(scoreRoom3Result); // false
+
+
+// 5. Answer the questions
+
+/* Callback Function: checkGradeOver70
+จุดสังเกต: เป็นฟังก์ชันที่ถูกส่งเข้าไปเป็น Argument
+ของ Higher Order Function ผ่าน Parameter ชื่อ operation */
+
+/* Higher Order Function: atLeastFive
+จุดสังเกต: เป็นฟังก์ชันที่รับฟังก์ชันอื่นเข้ามาเป็น Parameter
+และสามารถเรียกใช้งานฟังก์ชันนั้นภายในตัวเองได้ */
