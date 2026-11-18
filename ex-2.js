@@ -13,7 +13,7 @@ function atLeastFive(array, operation) {
   let count = 0;
   for (let i = 0; i < array.length; i++){
     if (operation(array[i])){
-      count++;
+      count = count + 1;
     }
   }
 

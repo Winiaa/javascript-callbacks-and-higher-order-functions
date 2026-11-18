@@ -36,8 +36,10 @@ console.log(newEmployeeSalaries); // [25005, 45000, 37000, 19500, 349000]
 ====================================
 
 1. ใน Exercise นี้ ฟังก์ชันใดเป็น Callback Function?
+callback function is addSalary500 because we pass them into another function
 
 2. ใน Exercise นี้ ฟังก์ชันใดเป็น Higher Order Function?
+highest order function is forEach because it receives another function as an argument
 
 ====================================
 */
